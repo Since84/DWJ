@@ -1,0 +1,20 @@
+{% extends '/views/blocks/base.html.twig' %}
+
+{% block main_content %}
+    	<div class="page-feature">
+			<div class="background" style="background-image:url({{ feat_image }})"></div>
+    		<div class="content">
+    			<span class="site-title">{{ site_title }}</span>
+    			<div class="excerpt">
+    				{% include '/views/blocks/widgets/spark-scroller.html.twig' %}
+    				<div class="v-bar">
+    					<div class="h-bar"></div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+		<div class="page-container">
+			<div class="page-content">{{ post.post_content }}</div>
+			<div class="page-sidebar">{{ sidebar }}</div>
+		</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+/* Project Block */
+
+ul.projects{
+	& > li {
+		display: inline-block;
+		&.project-container {
+			@include column($blueprint-grid-columns/4 * 3);
+		}
+		&.project-list{
+			@include column($blueprint-grid-columns/4);
+			background: $black;
+		}
+	}
+}

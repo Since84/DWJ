@@ -1,0 +1,22 @@
+ <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{% block html_lang %}en-US{% endblock %}" xml:lang="{% block xml_lang %}en{% endblock %}">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% block in_head %}
+    	<title>{% block title %}{% endblock %}</title>
+	{% endblock %}
+</head>
+<body class="detp-theme {% block body_class %}{{ body_class }}{% endblock %}">
+{% block main %}
+	<div id="main" class="container-fluid">
+		{% include 'views/blocks/header.html.twig' %}
+		{% block main_content %}
+
+		{% endblock %}
+	</div>
+{% endblock %}
+{% block footer %}
+	{% include 'views/blocks/footer.html.twig' %}
+{% endblock %}
+</body>
+</html>

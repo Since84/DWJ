@@ -1,0 +1,12 @@
+<div class="spark-scroller cycle-slideshow" data-cycle-speed="500" data-cycle-slides=".cycle-slide">
+{% for slide in slides %}
+
+	<div class="cycle-slide">
+		{% block slidecontent %}
+			<div class="slide-content">{{ slide.text }}</div>
+			<div class="slide-caption">{{ slide.author }}</div>
+		{% endblock %}
+	</div>	
+
+{% endfor %}
+</div>

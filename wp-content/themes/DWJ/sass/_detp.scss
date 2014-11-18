@@ -1,0 +1,86 @@
+/* DETP - Variables and Mixins */
+
+// Fonts
+@import "web-fonts";
+@include web-fonts(("Lato": ("400","700","900")));
+
+// Container
+	$containerWidth : 1024px;
+	$columns : 12;
+
+// Block
+	$blockMargin: .4%;
+
+// Colors
+	$black		:	#2d2f33;
+	$white		:	rgb(255,255,255);
+	$violet 	: 	#722A67;
+	$yellow 	: 	#F7CA10;
+	$textgray 	:	#808285;
+
+// Media Breaks
+	$adminbar-break : 782px;
+
+// Typography 
+@mixin maintext {
+	font-family: "Lato";
+	color: $black;
+}
+
+@mixin header3 {
+	font-weight: 200;
+	font-size: 18px;
+	color: $black;
+	@media screen and ( max-width: 940px ) {
+		// font-size: 14px;
+	}
+}
+
+// Mixins
+@mixin admin-bar-margin { 		//Add margin for adminbar
+	margin-top: 32px;
+	@media screen and ( max-width: 782px ) {
+		margin-top: 46px;
+	}
+}
+
+@mixin inline-nav {
+	position: relative; 
+	li {
+		display: inline-block;
+		vertical-align: middle;
+		padding: 20px 2%;
+		max-width: 200px;
+		text-align: center;
+		a{
+			text-decoration: none;	
+			@include header3;
+		}
+		.nav-drop {    // Sub Nav
+			display: none;
+			position: absolute;
+			width: 100%; 
+		}
+		&:hover .nav-drop { display: block; }
+
+		&.home-link {
+			max-width: 300px;
+			a {
+				font-size: 26px;
+				font-weight: 600;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+
+@mixin col($w){
+	width: (( 100% / $columns ) * $w ) - 1.1;
+	margin: $blockMargin;
+	display: inline-block;
+	vertical-align: top;
+}
+
+
+
+

@@ -1,0 +1,46 @@
+/* Theme Name: Don't Even Tripp 2014 */
+
+@import "compass/reset";
+@import "blueprint";
+@import "dwj";
+
+$blueprint-grid-columns: 24;
+
+/* Site Base */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	// background: black;
+	@include maintext;
+	&:not(.wp-admin) { 
+		padding-top: 54px; 
+		@media screen and ( max-width: 700px ) {
+			&:not(.wp-admin) { padding-top: 0; }
+		}
+		@media screen and ( max-width: 990px ) {
+		}
+	}
+	
+}
+
+.container {
+	max-width: $containerWidth;
+	width: 100%;
+	margin: auto;
+}
+
+.block {
+	display: inline-block;
+	margin: 5px;
+}
+
+/* Navigation */
+@import "navigation";
+
+/* Page */
+@import "page";
+
+/* Footer */
+@import "footer";

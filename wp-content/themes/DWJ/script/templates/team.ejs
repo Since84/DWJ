@@ -1,0 +1,23 @@
+<ul class="team">
+	<!-- <h2>Our Team</h2> -->
+<% postlist = posts.posts %>
+<% console.log(posts) %>
+
+<% for( var p=0; p < postlist.length; p++ ){ %>
+	<li class="member" member-id="<%= postlist.post_author %>">
+		<span class="member-thumbnail" style="background-image:url(<%= postlist[p].image.medium[0] %>);"></span>
+		<div class="member-info">
+			<h3 class="member-name"><%= postlist[p].post_title %></h3>
+			<h4 class="member-title"><%= postlist[p].member_title %></h4>
+			<h4 class="member-phone moreinfo"><%= postlist[p].member_phone %></h4>
+			<p class="member-bio open"><%= postlist[p].post_content %></p>
+			<ul class="member-social moreinfo">
+				<li class="facebook"><a href="http://facebook.com/<%= postlist[p].member_facebook %>">f</a></li>
+				<li class="twitter"><a href="http://twitter.com/<%= postlist[p].member_twitter %>">t</a></li>
+				<li class="linkedin"><a href="http://linkedin.com/in/<%= postlist[p].member_linkedin %>">f</a></li>
+				<li class="instagram"></li>
+			</ul>
+			<div class="member-contact open"><!-- TODO: add member contact --></div>
+		</div>
+<% } %>
+</ul>

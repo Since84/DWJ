@@ -1,0 +1,10 @@
+<div class="gallery">
+<% for( var p=0; p < posts.length; p++ ){ %>
+	<img class="<%= ( p == 0 ? 'active' : '' ) %>" src="<%= posts[p].image.full[0] %>" img-index="<%= p %>"/>
+<% } %>
+</div>
+<ul class="controls">
+	<li class="prev"><</li>	
+	<li class="play_pause">|></li>
+	<li class="next">></li>
+</ul>

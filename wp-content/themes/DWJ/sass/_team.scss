@@ -1,0 +1,93 @@
+/* Team Block */
+
+.our-team {
+	.member {
+		position: relative;
+		width: 25%;
+		display: inline-block;
+		vertical-align: top;
+		padding: 50px 50px 0;
+		font-size: 1.75rem;
+		opacity: .6;
+		transition: opacity .5s;
+		text-align: center;
+		// color: white;
+		&:hover { opacity: 1; }
+
+		.member-thumbnail {
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			margin-bottom: 1em;
+			background-size: cover;
+			// -webkit-border-radius: 150px;
+			// -moz-border-radius: 150px;
+			// border-radius: 150px;
+		}
+
+		.member-info {
+			position: absolute;
+			top: 0;
+		}
+
+		h3.member-name {
+			font-family: "Righteous";
+			margin-bottom: .25rem;
+		}
+		h4.member-title{
+			font-size: .5em;
+			margin-bottom: .5rem;
+		}
+		h4.member-phone {
+			font-size: .6em;
+			margin-bottom: .5rem;
+		}
+
+		.member-social {
+			width: 100%;
+			li{
+				display: inline-block;
+				font-size: 1rem;
+				a {color: #ccc;}
+			}
+		}
+
+		.moreinfo, .open {
+			display: none;
+		}
+
+		&:hover, &.active {
+			text-align: left;
+			.moreinfo {
+				display: inline-block;
+			}
+		} 
+
+
+		//Background Colors
+		// &:nth-child(4n-1){
+		// 	background: white;
+		// }
+		// &:nth-child(4n){
+		// 	background: $yellow;
+		// }
+		// &:nth-child(4n-2){
+		// 	background: $violet;
+		// }
+		// &:nth-child(4n-3){
+		// 	background: $black;
+		// }
+		// &:not(:nth-child(4n-1)):not(:nth-child(4n)){
+		// 	color: white;
+		// }
+		// &:not(:nth-child(4n-2)):not(:nth-child(4n-3)){
+		// 	color: $black;
+		// }
+
+		//Mobile styles
+		@media screen and ( max-width: 700px ){
+			width: 100%;
+		}
+
+	}
+}

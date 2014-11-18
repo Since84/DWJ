@@ -1,0 +1,260 @@
+/* Home Page Styles */
+
+.home, .page {
+
+	.page-feature { 
+		height: 35vw;
+		min-height: 175px;
+		position: relative;
+		.background {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			opacity: .6;
+		}
+		.content {
+			position: absolute;
+			left: 2vw;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			height: 30vw;
+			width: 45vw;
+
+			.site-title {
+				color: white;
+				text-align: center;
+				text-transform: uppercase;
+				font-weight: bold;
+				font-size: 18px;
+				padding-top: 4vw;
+				width: 100%;
+				display: inline-block;
+			}
+
+			.excerpt {
+				position: absolute;
+				bottom: 2vw;
+				padding: 1rem;
+				border: 1px solid white;
+				color: white;
+				width: 100%;
+				max-height: 130px;
+				line-height: 1.2rem;
+				.v-bar {
+					position:absolute;
+					display: block;
+					width: 3vw;
+					height: 1px; 
+					background: white;
+					right: -3vw;
+					top:0;
+					bottom:0;
+					margin: auto;
+					.h-bar {
+						position:absolute;
+						display: block;
+						height: 18vw;
+						width: 1px; 
+						background: white;
+						right: 0;
+						bottom:0;
+						margin: auto;
+					}
+				}
+			}
+
+			@media screen and ( max-width: 785px ) {
+				width: 80%;
+				top: 8vw;
+				left: 0;
+				right: 0;
+				margin: auto;
+				min-height: 150px;
+
+				.site-title{
+					display: none; 
+				}
+
+				.excerpt {
+					text-align: center;
+					.v-bar {
+						display: none; 
+					}
+				}
+			}
+		}
+		@media screen and ( max-width: 600px ) {
+			height: 45vw;
+		}
+	}
+
+	.page-container {
+		width: auto;
+		padding: 4vw 2vw;
+
+		.page-content {
+			width: 64vw;
+			display: inline-block;
+			line-height: 1.5em;
+			@include pagecontent;
+		}
+		.page-sidebar {
+			width: 28vw;
+			margin-left: 3vw;
+			@media screen and ( max-width: 600px ) {
+				margin-left: 0;
+				margin-top: 2rem;
+			}
+
+			.SMCWidget {
+				list-style: none;
+			}
+			#socialmedia-container {
+				.smc_icon_container {
+					width: 100%;
+					position: relative;
+					margin-bottom: 1rem;
+					img {
+						display: inline-block;
+						vertical-align: middle;
+						margin-right: 1rem;
+					}
+					a::after {
+						content:"";
+						display: inline-block;
+						vertical-align: middle;
+						color: $textgray;
+						font-size: 14px;
+					}
+				}
+				#social-email {
+					a::after{ content: "Email"; }
+				}
+				#social-twitter {
+					a::after{ content: "Twitter"; }
+				}
+				#social-linkedin {
+					a::after{ content: "LinkedIn"; }
+				}
+				@media screen and ( max-width: 600px ) {
+					padding: 0;
+				}
+			}
+		}
+		& > div {
+			display: inline-block;
+			vertical-align: top;
+
+			& > div.page-content {
+				padding: 5% 10%;
+			}
+			
+			
+			& > div.page-sidebar {
+				@media screen and ( max-width: 600px ) {
+					padding: 5%;
+				}
+			}
+
+
+			@media screen and ( max-width: 600px ) {
+				width: 100%!important;
+			}
+		}
+
+		@media screen and ( max-width: 600px ) {
+			padding: 10vw;
+		}
+	}
+
+}
+
+.page:not(.home) {
+	.page-feature {
+		height: 64vw;
+		.content {
+			color: $textgray;
+			right: 4vw;
+			left: auto;
+			height: 59vw;
+			top: 5vw;
+			bottom: auto;
+			width: 55vw;
+			.site-title {
+				margin-bottom: 7rem;
+				color: $textgray;
+				font-size: 18px;
+				font-weight: normal;
+				text-align: right;
+				padding-right: 2vw;
+				&::before, &::after{
+					content: '';
+					display: inline-block;
+					width: 17px;
+					height: 17px;
+					background: $diamond-black no-repeat center center;
+					background-size: 12px auto;
+					vertical-align: top;
+				}
+				&::before { margin-right: 2em; }
+				&::after { margin-left: 2em; }
+			}
+			.excerpt {
+				position: relative;
+				border: none;
+				color: $textgray;
+				padding: 0;
+				font-size: 20px;
+				line-height: 1.6em;
+				.v-bar { display: none!important; }
+			}
+		}
+		@media screen and ( max-width: 785px ) {
+			.content {
+				width: 95vw;
+				margin: auto;
+				margin-top: 20vw;
+				.excerpt {
+					padding: 10px;
+					font-size: 1rem;
+					line-height: 1.3rem;
+				}
+			}
+		}
+	}
+	.page-container{
+		.page-content {
+			margin: auto;
+			width: 94vw;
+			-webkit-columns: 3 150px;
+			-moz-columns: 3 150px;
+			columns: 3 150px;
+			-webkit-column-gap: 2em;
+			-moz-column-gap: 2em;
+			column-gap: 2em;
+			@media screen and ( max-width: 785px ) {
+				-webkit-columns: 2 150px;
+				-moz-columns: 2 150px;
+				columns: 2 150px;				
+			}
+			@media screen and ( max-width: 600px ) {
+				-webkit-columns: 1 150px;
+				-moz-columns: 1 150px;
+				columns: 1 150px;
+			}
+		}
+	}
+}
+
+.spark-scroller {
+	display: inline-block;
+	width: auto;
+	height: auto;
+	.slide-content {
+		margin-bottom: 10px;
+		max-height: 3.7em;
+		overflow: hidden;
+	}
+}
